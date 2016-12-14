@@ -1,2 +1,8 @@
 # react_test
-Test react with youtube API
+
+Dependecies
+ 
+ * React JS
+ * React Router
+ * MaterializeCSS
+
