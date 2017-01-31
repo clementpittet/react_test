@@ -12,3 +12,12 @@
 .wrapper-content .title{
 	font-size:1.875rem;
 }
+#map {
+  height: 300px;
+}
+ 
+@media screen and (min-width: 1024px){
+    #map {
+        height: 500px;
+    }
+}

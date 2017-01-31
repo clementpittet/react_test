@@ -5,10 +5,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
   </head>
   <body>
     <div id="root"></div>
   </body>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsa2jvEtEQn4Wpx0ut56F_3bxFMCVfKwA&libraries=places"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDsa2jvEtEQn4Wpx0ut56F_3bxFMCVfKwA",
+      authDomain: "react-example-7fe68.firebaseapp.com",
+      databaseURL: "https://react-example-7fe68.firebaseio.com",
+      storageBucket: "react-example-7fe68.appspot.com",
+      messagingSenderId: "520676689979"
+    };
+    firebase.initializeApp(config);
+  </script>
   <script src="/bundle.js"></script>
 </html>

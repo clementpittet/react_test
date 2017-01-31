@@ -14,7 +14,7 @@ export default class App extends Component {
 	constructor(props){
 		super(props)
 		this.state = {
-			url : `${baseUrl}?q=${term}&part=snippet&key=${apiKey}`,
+			url : `${baseUrl}?q=${term}&part=snippet&key=${apiKey}&type=video`,
 			videos : []
 		}
 		this.onSearch = this.onSearch.bind(this)
@@ -44,7 +44,7 @@ export default class App extends Component {
   onSearch(term, e){
   	e.preventDefault()
   	this.setState({
-  		url: `${baseUrl}?q=${term}&part=snippet&key=${apiKey}`
+  		url: `${baseUrl}?q=${term}&part=snippet&key=${apiKey}&type=video`
   	}, () => {
 	  	axios.get(this.state.url)
 			.then(({data}) => {

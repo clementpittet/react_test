@@ -7,6 +7,9 @@ const Detail = (props) => {
     return (
     	<div className="container">	
     		<Nav />
+    		<div className="">
+			    <a className="waves-effect waves-light btn" onClick={browserHistory.goBack}>Back</a>
+			  </div>
     		<div className="row center-align">	
     			<iframe  width="560" height="315" src={url} frameBorder="0" allowFullScreen></iframe>
     		</div>	

@@ -17,9 +17,10 @@ module.exports = {
     }]
   },
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx', '.json']
   },
   devServer: {
+    host : 'react.local.nurunfrance.com',
     historyApiFallback: true,
     contentBase: './'
   }
