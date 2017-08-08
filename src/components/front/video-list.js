@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import Myform from './form'
 import List from './list'
 import axios from 'axios'
-import Nav from './nav'
 import {Router, Route, browserHistory, Link } from 'react-router';
 
 const searchList = 'search'
@@ -10,7 +9,7 @@ const baseUrl = `https://www.googleapis.com/youtube/v3/${searchList}`
 const apiKey = 'AIzaSyDszdZq1uImMniMJiVwROrZAFy8zfqaQkI'
 const term = 'reactJS'
 
-export default class App extends Component {
+export default class VideoList extends Component {
 	constructor(props){
 		super(props)
 		this.state = {
@@ -34,7 +33,6 @@ export default class App extends Component {
   render() {
     return (
       <div className="container"> 
-      <Nav />   
       	<Myform onSearch={this.onSearch} />
       	<List videos={this.state.videos} />
       </div>

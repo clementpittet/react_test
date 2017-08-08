@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Nav from './nav'
 import {Router, Route, browserHistory } from 'react-router';
 
 export default class Users extends Component {
@@ -27,7 +26,6 @@ export default class Users extends Component {
 	render(){
 		return(
 			<div className="container"> 
-				<Nav />
 				<span className="title">List of users with firebase</span>
 				<ul className="collection">
 				{

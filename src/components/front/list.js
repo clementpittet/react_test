@@ -12,7 +12,7 @@ const ListItem = (props) => {
 		<div className="list-item">
 			<Link to={`/details/${videoId}`}><img src={img} alt="" /></Link>
 			<div className="wrapper-content">
-				<span className="title">{title}</span>
+				<span className="title"><Link to={`/details/${videoId}`}>{title}</Link></span>
 				<span>{desc}</span>
 			</div>
 		</div>

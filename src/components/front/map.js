@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import Nav from './nav'
 import {Router, Route, browserHistory, Link } from 'react-router'
 
 export default class Map extends Component {  
@@ -35,14 +34,15 @@ export default class Map extends Component {
   }
 
   setValue(url){
-    console.log(url);
     axios.get(url)
     .then(({data}) => {
       const markers = data.postalCodes
-      this.setMarkers(markers, this.state.map)    
-      this.setState({
-        markers
-      });    
+      if (markers.length != 0) {
+        this.setMarkers(markers, this.state.map)    
+      }
+        this.setState({
+          markers
+        });    
     })
     .catch(console.log)    
   }
@@ -100,15 +100,10 @@ export default class Map extends Component {
     }); 
     this.setValue(this.state.url)
   }
-  
-  componentWillUpdate = (nextProps, nextState) =>{
-   
-  }
 
   render(){
     return(
       <div className="container"> 
-        <Nav />
         <h3>Map</h3>
         <form onSubmit={this.onSearch.bind(this, this.state.term)} className="row col s12 valign-wrapper">
           <div className=" col s8">
@@ -116,7 +111,12 @@ export default class Map extends Component {
               <input onChange={this.handleChange } type="text"  id="search"></input>
               <label htmlFor="search">Rechercher</label>
             </div>
-            <div>{this.state.markers.length}</div>
+            {this.state.markers.length == 0 ? (
+              <div className="error">Aucune correspondance</div>
+            ) : (
+              <div className="success">{this.state.markers.length} correspondance</div>
+              )
+            }
           </div>
           <div className="valign col s4">
             <button className="btn waves-effect waves-light" type="submit" name="action">Search</button>

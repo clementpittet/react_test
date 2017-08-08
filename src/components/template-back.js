@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import {Router, Route, browserHistory, Link } from 'react-router';
-import Nav from './inc/nav'
-import Footer from './inc/footer'
+import NavBack from './inc/nav-back'
+import Footer from './inc/footer-back'
 
-const Template  = (props) => {
+const TemplateBack  = (props) => {
   return (
     <div>
-      <Nav />
+      <NavBack />
         {props.children}
       <Footer />
     </div>
   )
 }
 
-export default Template
+export default TemplateBack
